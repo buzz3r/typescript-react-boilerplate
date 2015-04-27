@@ -36,7 +36,13 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
   }
 
   render() {
-    return React.DOM.div({onClick: this.handleClick}, this.state.clicks);    
+      return React.jsx(/*
+    <div onClick={this.handleClick}>
+        <span>{this.state.clicks}</span>
+    </div>
+    */);
+         
+    //return React.DOM.div({onClick: this.handleClick}, this.state.clicks);    
   }
 
   private onChange(): void {

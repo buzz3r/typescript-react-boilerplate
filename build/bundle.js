@@ -105,7 +105,8 @@
 	        this.postStore.removeChangeListener(this.onChange);
 	    };
 	    ClickCounterClass.prototype.render = function () {
-	        return React.DOM.div({ onClick: this.handleClick }, this.state.clicks);
+	        return (React.createElement("div", { onClick: this.handleClick }, React.createElement("span", null, this.state.clicks)));
+	        //return React.DOM.div({onClick: this.handleClick}, this.state.clicks);    
 	    };
 	    ClickCounterClass.prototype.onChange = function () {
 	        this.setState(this.getStateFromStores());
