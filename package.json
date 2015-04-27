@@ -1,0 +1,21 @@
+{
+  "name": "react-typescript-base",
+  "version": "0.0.0",
+  "description": "TypeScript Flux implementation",
+  "scripts": {
+    "start": "make -j"
+  },
+  "author": "Moritz Meisel <moritz.meisel@inf.h-brs.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "eventemitter2": "^0.4.14",
+    "express": "^4.10.6",
+    "flux": "^2.0.1",
+    "keymirror": "^0.1.0",
+    "react": "^0.13.1",
+    "typed-react": "^3.3.1",
+    "typescript": "^1.4.1",
+    "ts-loader": "^0.3.4",
+    "ts-jsx-loader": "0.2.0"
+  }
+}
