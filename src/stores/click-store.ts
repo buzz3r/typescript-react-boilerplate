@@ -2,7 +2,7 @@ import Dispatcher = require('../dispatcher/base-dispatcher');
 import Constants = require('../constants/Constants');
 import Events = require('events');
 
-class PostStore extends Events.EventEmitter {
+class ClickStore extends Events.EventEmitter {
 
     private dispatcher: typeof Dispatcher;
     private actionTypes: ActionTypes;
@@ -52,4 +52,4 @@ class PostStore extends Events.EventEmitter {
     }
 }
 
-export = PostStore;
+export = ClickStore;

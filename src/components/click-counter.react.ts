@@ -2,7 +2,7 @@
 
 import React = require('react');
 import TypedReact = require('typed-react');
-import PostStore = require('../stores/post-store');
+import ClickStore = require('../stores/click-store');
 import Dispatcher = require('../dispatcher/base-dispatcher');
 import ViewActions = require('../actions/view-action-creator');
 
@@ -13,11 +13,11 @@ interface ClickCounterIState {
 
 class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCounterIState> {
 	
-  private postStore: PostStore;
+  private clickStore: ClickStore;
   private actions: ViewActions;
   constructor() {
     super();
-    this.postStore = new PostStore();   
+    this.clickStore = new ClickStore();   
     this.actions = new ViewActions();
   }
 
@@ -28,21 +28,20 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
   }
 
   componentDidMount() {
-    this.postStore.addChangeListener(this.onChange);
+    this.clickStore.addChangeListener(this.onChange);
   }
 
   componentDidUnMount() {
-    this.postStore.removeChangeListener(this.onChange);
+    this.clickStore.removeChangeListener(this.onChange);
   }
 
   render() {
-      return React.jsx(/*
+      return /*jsx*/
     <div onClick={this.handleClick}>
         <span>{this.state.clicks}</span>
     </div>
-    */);
-         
-    //return React.DOM.div({onClick: this.handleClick}, this.state.clicks);    
+    /*jsx*/;
+        
   }
 
   private onChange(): void {
@@ -50,7 +49,7 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
   }
 
   private getStateFromStores(): any {
-    return { clicks: this.postStore.getClicks()};
+    return { clicks: this.clickStore.getClicks() };
   }
 
   private handleClick(event) {
