@@ -5,6 +5,7 @@
 ///<reference path="react/react.d.ts"/>
 ///<reference path="typed-react/typed-react.d.ts"/>
 ///<reference path="react-router/react-router.d.ts"/>
+///<reference path="node/node.d.ts"/>
 
 ///<reference path="custom-types.d.ts"/>
 

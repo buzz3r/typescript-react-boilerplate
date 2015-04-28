@@ -1,7 +1,6 @@
 /// <reference path='../../typings/_all.d.ts' />
 
 import React = require('react');
-import TypedReact = require('typed-react');
 import ClickStore = require('../stores/click-store');
 import Dispatcher = require('../dispatcher/base-dispatcher');
 import ViewActions = require('../actions/view-action-creator');
@@ -11,25 +10,20 @@ interface ClickCounterIState {
   clicks: number;
 }
 
-class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCounterIState> {
+class ClickCounter extends React.Component<ClickCounterIProps, ClickCounterIState> {
 	
   private clickStore: ClickStore;
   private actions: ViewActions;
+
   constructor() {
     super();
     this.clickStore = new ClickStore();   
     this.actions = new ViewActions();
-    var test = React.DOM.div(null, "");
-  }
-
-  getInitialState() {
-    return {
-      clicks: 0
-    }
+    this.state = { clicks: 0 };
   }
 
   componentDidMount() {
-    this.clickStore.addChangeListener(this.onChange);
+    this.clickStore.addChangeListener(this.onChange.bind(this));
   }
 
   componentDidUnMount() {
@@ -37,9 +31,9 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
   }
 
   render() {
-    return <div onClick={this.handleClick}>
-        <span>{this.state.clicks}</span>
-    </div>;    
+    return  <div onClick={this.handleClick.bind(this)}>
+              <span>{this.state.clicks}</span>
+            </div>;    
   }
 
   private onChange(): void {
@@ -55,4 +49,4 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
   }
 }
 
-export var ClickCounter = TypedReact.createClass(ClickCounterClass);
+export = ClickCounter;
