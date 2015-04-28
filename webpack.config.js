@@ -8,7 +8,7 @@ module.exports = {
     },
     module: {
         loaders: [
-            { test: /\.ts$/, loader: 'ts-loader?sourceMap=true&target=ES5!ts-jsx-loader' }
+            { test: /\.ts$/, loader: 'ts-loader?sourceMap=true&target=ES5&compiler=jsx-typescript' }
         ]
     }
 }

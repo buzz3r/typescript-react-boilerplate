@@ -19,6 +19,7 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
     super();
     this.clickStore = new ClickStore();   
     this.actions = new ViewActions();
+    var test = React.DOM.div(null, "");
   }
 
   getInitialState() {
@@ -36,12 +37,9 @@ class ClickCounterClass extends TypedReact.Component<ClickCounterIProps, ClickCo
   }
 
   render() {
-      return /*jsx*/
-    <div onClick={this.handleClick}>
+    return <div onClick={this.handleClick}>
         <span>{this.state.clicks}</span>
-    </div>
-    /*jsx*/;
-        
+    </div>;    
   }
 
   private onChange(): void {

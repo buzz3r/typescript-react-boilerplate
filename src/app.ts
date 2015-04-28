@@ -3,6 +3,7 @@
 import React = require('react');
 import TypedReact = require('typed-react');
 import component = require('./components/click-counter.react');
+import Router = require('./components/click-counter.react');
 
 interface AppIProps {}
 interface AppIState {}
