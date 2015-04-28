@@ -1,23 +1,15 @@
 /// <reference path='../typings/_all.d.ts' />
 
 import React = require('react');
-import TypedReact = require('typed-react');
 import ClickCounter = require('./components/click-counter.react');
-import Router = require('./components/click-counter.react');
 
 interface AppIProps {}
 interface AppIState {}
 
-class AppClass extends TypedReact.Component<AppIProps, AppIState> {
+class App extends React.Component<AppIProps, AppIState> {
     render() {
-        return React.createElement(ClickCounter, '');
+        return <ClickCounter />;
     }
 }
 
-export var App = React.createFactory(TypedReact.createClass<AppIProps, AppIState>(AppClass));
-
-window.onload = function () {
-  var app = App({});
-
-  React.render(app, document.getElementById('counter'));
-}
+React.render(<App/>, document.getElementById('counter'));
