@@ -21,4 +21,5 @@ class ViewActionCreator implements IViewActionCreators {
     }
 }
 
-export = ViewActionCreator;
+var actionCreator = new ViewActionCreator();
+export = actionCreator;

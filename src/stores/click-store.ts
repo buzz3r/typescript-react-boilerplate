@@ -52,4 +52,5 @@ class ClickStore extends Events.EventEmitter {
     }
 }
 
-export = ClickStore;
+var clickStore = new ClickStore();
+export = clickStore;
