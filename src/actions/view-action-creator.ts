@@ -1,5 +1,5 @@
 import BaseDispatcher = require('../dispatcher/base-dispatcher');
-import Constants = require('../constants/Constants');
+import ActionTypes = require('../constants/ActionTypes');
 
 interface IViewActionCreators {
     click(): void;
@@ -7,16 +7,14 @@ interface IViewActionCreators {
 
 class ViewActionCreator implements IViewActionCreators {
   private dispatcher: typeof BaseDispatcher;
-    private actionTypes: ActionTypes;
 
     constructor() {
       this.dispatcher = BaseDispatcher;
-      this.actionTypes = Constants.actionTypes();
     }
 
     public click(): void {
       this.dispatcher.handleViewAction({
-        type: this.actionTypes.CLICK
+          type: ActionTypes.CLICK
       });
     }
 }

@@ -1,6 +1,6 @@
 /// <reference path='../../typings/_all.d.ts' />
 
-import Constants = require('../constants/Constants');
+import PayloadSources = require('../constants/PayloadSources');
 import flux = require('flux');
 
 interface IDispatcher {
@@ -9,16 +9,13 @@ interface IDispatcher {
 
 class BaseDispatcher extends flux.Dispatcher<any> {
 
-    private _constants: PayloadSources;
-
     constructor() {
         super();
-        this._constants = Constants.payloadSources();
     }
 
     handleViewAction(action) {
         var payload = {
-            source: this._constants.VIEW_ACTION,
+            source: PayloadSources.VIEW_ACTION,
             action: action
         };
         this.dispatch(payload);

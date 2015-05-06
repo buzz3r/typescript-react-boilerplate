@@ -1,5 +1,5 @@
 import Dispatcher = require('../dispatcher/base-dispatcher');
-import Constants = require('../constants/Constants');
+import ActionTypes = require('../constants/ActionTypes');
 import Events = require('events');
 
 class ClickStore extends Events.EventEmitter {
@@ -12,7 +12,6 @@ class ClickStore extends Events.EventEmitter {
     constructor() {
         super();
         this.dispatcher = Dispatcher;
-        this.actionTypes = Constants.actionTypes();
         this.CHANGE_EVENT = 'change';
         this.click = 0;
         this.dispatcher.register(this.dispatchToken.bind(this));
@@ -42,7 +41,7 @@ class ClickStore extends Events.EventEmitter {
         var action = payLoad.action;
 
         switch (action.type) {
-            case this.actionTypes.CLICK:
+            case ActionTypes.CLICK:
                 this.addClick();
                 this.emitChange();
                 break;
