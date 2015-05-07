@@ -15,13 +15,14 @@ class ClickCounter extends React.Component<ClickCounterIProps, ClickCounterIStat
   constructor() {
     super();
     this.state = { clicks: 0 };
+    this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount() {
-    ClickStore.addChangeListener(this.onChange.bind(this));
+    ClickStore.addChangeListener(this.onChange);
   }
 
-  componentDidUnMount() {
+  componentWillUnmount() {
     ClickStore.removeChangeListener(this.onChange);
   }
 
