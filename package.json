@@ -1,7 +1,7 @@
 {
   "name": "react-typescript-base",
   "version": "0.0.0",
-  "description": "TypeScript Flux implementation",
+  "description": "TypeScript Flux React Boilerplate",
   "scripts": {
     "start": "make -j"
   },
