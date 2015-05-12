@@ -1,3 +1,12 @@
-# Typescript-React-Flux Boilerplate
+# Typescript Flux React - Boilerplate
 
-## use webpack to build the project and open ./build/index.html
+### Installation
+
+```
+$ git clone https://github.com/buzz3r/typescript-react-boilerplate.git
+$ npm install
+$ webpack
+$ open ./build/index.html
+```
+
+Feel free to send me any feedback.
